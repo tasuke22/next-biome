@@ -1,0 +1,15 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.2/schema.json",
+	"files": {
+		"ignore": ["public", ".next", "node_modules"]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	}
+}
