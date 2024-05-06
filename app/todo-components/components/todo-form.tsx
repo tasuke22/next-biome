@@ -12,11 +12,15 @@ const TodoForm = () => {
 		setTodos((prevTodos) => [...prevTodos, newTodo]);
 	};
 
-	const handleUpdateTodo = (id: string, newText: string) => {
+	const handleUpdateTodo = (
+		id: string,
+		newText: string,
+		completed: boolean,
+	) => {
 		setTodos((prevTodos) =>
 			prevTodos.map((todo) => {
 				if (todo.id === id) {
-					return { ...todo, content: newText };
+					return { ...todo, content: newText, completed: completed };
 				}
 				return todo;
 			}),
@@ -35,6 +39,9 @@ const TodoForm = () => {
 		todo.content.toLowerCase().includes(searchQuery.toLowerCase()),
 	);
 
+	const totalTasks = todos.length;
+	const remainingTasks = todos.filter((todo) => !todo.completed).length;
+
 	return (
 		<div className="container">
 			<TodoQuery
@@ -46,6 +53,8 @@ const TodoForm = () => {
 				todos={filteredTodos}
 				onUpdateTodo={handleUpdateTodo}
 				onDeleteTodo={handleDeleteTodo}
+				totalTasks={totalTasks}
+				remainingTasks={remainingTasks}
 			/>
 		</div>
 	);

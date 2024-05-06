@@ -6,12 +6,14 @@ export type Todo = {
 
 export type TodoListProps = {
 	todos: Todo[];
-	onUpdateTodo: (id: string, newText: string) => void;
+	onUpdateTodo: (id: string, newText: string, completed: boolean) => void;
 	onDeleteTodo: (id: string) => void;
+	totalTasks: number;
+	remainingTasks: number;
 };
 
 export type TodoItemProps = {
 	todo: Todo;
-	onUpdateTodo: (id: string, newText: string) => void;
+	onUpdateTodo: (id: string, newText: string, completed: boolean) => void;
 	onDeleteTodo: (id: string) => void;
 };
