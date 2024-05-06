@@ -26,7 +26,7 @@ const TodoInput = ({ onAddTodo }: TodoInputProps) => {
 	};
 
 	return (
-		<div className="flex items-center gap-3 mt-4">
+		<div className="flex items-center gap-3 pt-10">
 			<input
 				onChange={(e) => {
 					handleInputTodo(e);
